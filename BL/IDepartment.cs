@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace BL
 {
-    public class Department
+    public interface IDepartment
     {
         public string title { get; set; }
         public HashSet<IEmployee> staff { get; set; }
-        public Department(string title, HashSet<IEmployee> staff) => (_title, _staff) = (title, staff);
+        public IDepartment(string title, HashSet<IEmployee> staff) => (_title, _staff) = (title, staff);
 
         public void hireEmployee(IEmployee employee)
         {
