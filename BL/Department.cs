@@ -10,10 +10,6 @@ namespace BL
         public HashSet<IEmployee> staff { get; set; }
         public Department(string title, HashSet<IEmployee> staff) => (_title, _staff) = (title, staff);
 
-        public double calcStaffSalary()
-        {
-            return staff.Sum(employee => employee.calcMonthsSalary());
-        }
         public void hireEmployee(IEmployee employee)
         {
             staff.Add(employee);

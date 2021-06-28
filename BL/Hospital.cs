@@ -10,10 +10,6 @@ namespace BL
         public HashSet<Department> departments { get; set; }
         public Hospital(string title, HashSet<Department> departments) => (_title, _departments) = (title, departments);
 
-        public double calcStaffSalary()
-        {
-            return departments.Sum(department => department.calcStaffSalary());
-        }
         public void createDepartment(Department department)
         {
             departments.Add(department);
