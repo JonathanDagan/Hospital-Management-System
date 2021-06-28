@@ -3,12 +3,12 @@ using System.Globalization;
 
 namespace BL
 {
-    public class WorkHour
+    public class WorkLog
     {
         public IEmployee employee { get; }
         public DateTime startTime { get; }
         public DateTime endTime { get; }
-        public WorkHour(IEmployee employee, DateTime startTime, DateTime endTime)
+        public WorkLog(IEmployee employee, DateTime startTime, DateTime endTime)
             => (_employee, _startTime, _endTime)
             = (employee, startTime, endTime);
 
