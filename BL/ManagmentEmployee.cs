@@ -4,17 +4,26 @@ namespace BL
 {
     public class ManagmentEmployee: IEmployee
     {
-        // public int socialId { get; set; }
-        // public string firstName { get; set; }
-        // public string lastName { get; set; }
-        // public Job position { get; set; }
-        // public void logHours()
-        // {
+        public Id socialId { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public Job position { get; set; }
+        public ManagmentEmployee(Id socialId, string firstName, string lastName, Job position)
+        {
+            this.socialId = socialId;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.position = position;
+        }
 
-        // }
-        // public double calcMonthsSalary()
-        // {
+        public void logHours()
+        {
 
-        // }
+        }
+        public double calcMonthsSalary()
+        {
+            // Todo: implement
+            return 0;
+        }
     }
 }
