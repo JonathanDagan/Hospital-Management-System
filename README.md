@@ -4,4 +4,4 @@
 
 ### Design:
 
-![BL UML](./docs/HMS_BL.svg)
+![BL UML](docs/HMS-BL.svg)
