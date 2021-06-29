@@ -14,11 +14,11 @@ namespace BL
             this.staff = staff;
         }
 
-        public void hireEmployee(MedicalEmployee employee)
+        public void HireEmployee(MedicalEmployee employee)
         {
             staff.Add(employee);
         }
-        public void fireEmployee(MedicalEmployee employee)
+        public void FireEmployee(MedicalEmployee employee)
         {
             staff.Remove(employee);
         }

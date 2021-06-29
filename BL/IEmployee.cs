@@ -13,7 +13,7 @@ namespace BL
 
         // }
 
-        public ERank getEmployeesHighestRank()
+        public ERank GetEmployeesHighestRank()
         {
             // Todo: implement
             return 0;

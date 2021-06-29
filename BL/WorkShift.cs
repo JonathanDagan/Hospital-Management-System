@@ -15,11 +15,11 @@ namespace BL
             this.endTime = endTime;
         }
 
-        public double getShiftPaycheck()
+        public double GetShiftPaycheck()
         {
-            return getShiftLength() * employee.position.getHourlyRate();
+            return GetShiftLength() * employee.position.GetHourlyRate();
         }
-        public double getShiftLength()
+        public double GetShiftLength()
         {
             // TODO: Check if what total hours stands for -> if it rounds or not
             return (endTime - startTime).TotalHours;

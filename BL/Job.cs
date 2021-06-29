@@ -20,7 +20,7 @@ namespace BL
             {ERank.decisionMaker, 0.5},
             {ERank.manager, 0.5},
         };
-        public double getHourlyRate()
+        public double GetHourlyRate()
         {
             double rate = marketRate;
 
@@ -29,12 +29,12 @@ namespace BL
                 rate *= ( 1 + riskFactor );
             }
 
-            rate += _calcRanksRateFactor();
+            rate += _CalcRanksRateFactor();
             
             return rate;
         }
 
-        private double _calcRanksRateFactor()
+        private double _CalcRanksRateFactor()
         {
             return 1 + ranks.Sum(rank => _rankToRate[rank]);
         }
