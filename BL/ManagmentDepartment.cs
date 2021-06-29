@@ -6,6 +6,21 @@ namespace BL
 {
     public class ManagmentDepartment: IDepartment
     {
-        public HashSet<ManagmentEmployee> staff { get; set; }
+        public string title { get; set; }
+        public HashSet<IEmployee> staff { get; set; }
+        public ManagmentDepartment(string title, HashSet<IEmployee> staff)
+        {
+            this.title = title;
+            this.staff = staff;
+        }
+
+        public void hireEmployee(ManagmentEmployee employee)
+        {
+            staff.Add(employee);
+        }
+        public void fireEmployee(ManagmentEmployee employee)
+        {
+            staff.Remove(employee);
+        }
     }
 }
