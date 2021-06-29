@@ -11,9 +11,9 @@ namespace BL
         public HashSet<ERank> ranks { get; set; }
 
         public double riskFactor { get; set; }
-        public double getHourlyRate(IEmployee employee)
+        public double getHourlyRate()
         {
-            double rate = employee.position.marketRate;
+            double rate = marketRate;
 
             if (riskFactor > 0)
             {
