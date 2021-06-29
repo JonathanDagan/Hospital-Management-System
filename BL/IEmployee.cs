@@ -13,12 +13,7 @@ namespace BL
 
         // }
 
-        public double calcMonthsSalary()
-        {
-            // Todo: implement
-            return 0;
-        }
-        public ERank getEmployeesHighestRank()
+        public ERank GetEmployeesHighestRank()
         {
             // Todo: implement
             return 0;

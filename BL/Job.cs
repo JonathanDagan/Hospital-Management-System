@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using DAL;
+
 namespace BL
 {
     public class Job
@@ -12,15 +14,23 @@ namespace BL
         public HashSet<ERank> ranks { get; set; }
 
         public double riskFactor { get; set; }
+        public Job(string title, string description, double marketRate, HashSet<ERank> ranks, double riskFactor = 0)
+        {
+            this.title = title;
+            this.description = description;
+            this.marketRate = marketRate;
+            this.ranks = ranks;
+            this.riskFactor = riskFactor;
+        }
         // TODO: load from config
         private Dictionary<ERank, double> _rankToRate = new Dictionary<ERank, double>(){
-            {ERank.junior, 0},
-            {ERank.senior, 0.05},
-            {ERank.senior, 0.3},
-            {ERank.decisionMaker, 0.5},
-            {ERank.manager, 0.5},
+            {ERank.junior, RankFactors.junior},
+            {ERank.senior, RankFactors.senior},
+            {ERank.specialist, RankFactors.specialist},
+            {ERank.decisionMaker, RankFactors.decisionMaker},
+            {ERank.manager, RankFactors.manager},
         };
-        public double getHourlyRate()
+        public double GetHourlyRate()
         {
             double rate = marketRate;
 
@@ -29,12 +39,10 @@ namespace BL
                 rate *= ( 1 + riskFactor );
             }
 
-            rate += _calcRanksRateFactor();
-            
-            return rate;
+            return rate * _CalcRanksRateFactor();
         }
 
-        private double _calcRanksRateFactor()
+        private double _CalcRanksRateFactor()
         {
             return 1 + ranks.Sum(rank => _rankToRate[rank]);
         }

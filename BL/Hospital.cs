@@ -14,11 +14,11 @@ namespace BL
             this.departments = departments;
         }
 
-        public void createDepartment(IDepartment department)
+        public void CreateDepartment(IDepartment department)
         {
             departments.Add(department);
         }
-        public void dismantleDepartment(IDepartment department)
+        public void DismantleDepartment(IDepartment department)
         {
             departments.Remove(department);
         }

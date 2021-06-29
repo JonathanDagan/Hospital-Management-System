@@ -11,21 +11,21 @@ namespace BL
         {
             this.staffHours = staffHours;
         }
-        public double calcEmployeeSalary(IEmployee employee)
+        public double CalcEmployeeSalary(IEmployee employee)
         {
             var employeesHours = staffHours.Where(shift => shift.employee.socialId == employee.socialId);
             double salary;
 
-            if (employee.getEmployeesHighestRank() < ERank.decisionMaker)
+            if (employee.GetEmployeesHighestRank() < ERank.decisionMaker)
             {
-                salary = employeesHours.Sum(shift => shift.getShiftPaycheck());
+                salary = employeesHours.Sum(shift => shift.GetShiftPaycheck());
             }
             else {
-                var totalHours = employeesHours.Sum(shift => shift.getShiftLength());
+                var totalHours = employeesHours.Sum(shift => shift.GetShiftLength());
 
                 if (totalHours < 50 || totalHours < 200)
                 {
-                    salary = employeesHours.Sum(shift => shift.getShiftPaycheck());
+                    salary = employeesHours.Sum(shift => shift.GetShiftPaycheck());
                 }
                 else
                 {
@@ -33,15 +33,15 @@ namespace BL
                     There should be a bug here where if an employee switches position in the end of the month
                     to a managment position he would get a payrate for the entire month
                     */
-                    salary = employee.position.getHourlyRate() * 200;
+                    salary = employee.position.GetHourlyRate() * 200;
                 }
             }
 
             return salary;
         }
-        public double calcStaffSalary(HashSet<IEmployee> departments)
+        public double CalcStaffSalary(HashSet<IEmployee> departments)
         {
-            return departments.Sum(employee => calcEmployeeSalary(employee));
+            return departments.Sum(employee => CalcEmployeeSalary(employee));
         }
 
     }

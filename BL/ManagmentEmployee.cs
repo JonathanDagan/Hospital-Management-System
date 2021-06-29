@@ -16,10 +16,5 @@ namespace BL
             this.position = position;
         }
 
-        public double calcMonthsSalary()
-        {
-            // Todo: implement
-            return 0;
-        }
     }
 }
