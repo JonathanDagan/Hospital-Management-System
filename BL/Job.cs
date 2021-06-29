@@ -14,6 +14,14 @@ namespace BL
         public HashSet<ERank> ranks { get; set; }
 
         public double riskFactor { get; set; }
+        public Job(string title, string description, double marketRate, HashSet<ERank> ranks, double riskFactor = 0)
+        {
+            this.title = title;
+            this.description = description;
+            this.marketRate = marketRate;
+            this.ranks = ranks;
+            this.riskFactor = riskFactor;
+        }
         // TODO: load from config
         private Dictionary<ERank, double> _rankToRate = new Dictionary<ERank, double>(){
             {ERank.junior, RankFactors.junior},
