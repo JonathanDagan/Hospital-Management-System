@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BL
 {
@@ -11,6 +12,14 @@ namespace BL
         public HashSet<ERank> ranks { get; set; }
 
         public double riskFactor { get; set; }
+        // TODO: load from config
+        private Dictionary<ERank, double> _rankToRate = new Dictionary<ERank, double>(){
+            {ERank.junior, 0},
+            {ERank.senior, 0.05},
+            {ERank.senior, 0.3},
+            {ERank.decisionMaker, 0.5},
+            {ERank.manager, 0.5},
+        };
         public double getHourlyRate()
         {
             double rate = marketRate;
@@ -25,33 +34,9 @@ namespace BL
             return rate;
         }
 
-        // TODO: fix this mess
         private double _calcRanksRateFactor()
         {
-            double rateFactor = 1;
-            foreach (var rank in ranks)
-            {
-                switch (rank)
-                {
-                    case ERank.junior:
-                        break;
-                    case ERank.senior:
-                        rateFactor += 0.05;
-                        break;
-                    case ERank.specialist:
-                        rateFactor += 0.3;
-                        break;
-                    case ERank.decisionMaker:
-                        rateFactor += 0.5;
-                        break;
-                    case ERank.manager:
-                        rateFactor += 0.5;
-                        break;
-                    default:
-                        throw new Exception("IDK");
-                }
-            }
-            return rateFactor;
+            return 1 + ranks.Sum(rank => _rankToRate[rank]);
         }
 
     }
