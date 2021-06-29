@@ -16,10 +16,6 @@ namespace BL
             this.position = position;
         }
 
-        public void logHours()
-        {
-
-        }
         public double calcMonthsSalary()
         {
             // Todo: implement

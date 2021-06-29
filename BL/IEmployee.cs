@@ -13,10 +13,6 @@ namespace BL
 
         // }
 
-        public void logHours()
-        {
-
-        }
         public double calcMonthsSalary()
         {
             // Todo: implement
