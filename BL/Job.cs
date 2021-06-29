@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using DAL;
+
 namespace BL
 {
     public class Job
@@ -14,11 +16,11 @@ namespace BL
         public double riskFactor { get; set; }
         // TODO: load from config
         private Dictionary<ERank, double> _rankToRate = new Dictionary<ERank, double>(){
-            {ERank.junior, 0},
-            {ERank.senior, 0.05},
-            {ERank.senior, 0.3},
-            {ERank.decisionMaker, 0.5},
-            {ERank.manager, 0.5},
+            {ERank.junior, RankFactors.junior},
+            {ERank.senior, RankFactors.senior},
+            {ERank.specialist, RankFactors.specialist},
+            {ERank.decisionMaker, RankFactors.decisionMaker},
+            {ERank.manager, RankFactors.manager},
         };
         public double GetHourlyRate()
         {
