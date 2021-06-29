@@ -9,8 +9,11 @@ namespace BL
         public DateTime startTime { get; }
         public DateTime endTime { get; }
         public WorkShift(IEmployee employee, DateTime startTime, DateTime endTime)
-            => (_employee, _startTime, _endTime)
-            = (employee, startTime, endTime);
+        {
+            this.employee = employee;
+            this.startTime = startTime;
+            this.endTime = endTime;
+        }
 
         public double getShiftPaycheck()
         {
