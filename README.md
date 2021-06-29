@@ -2,6 +2,8 @@
 # HMS
 ### Hospital Managment System
 
+## [Submition Page](docs/SUBMITION.md)
+
 ### Design:
 
 ![BL UML](docs/HMS-BL.svg)
