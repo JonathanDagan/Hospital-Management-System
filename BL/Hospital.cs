@@ -7,14 +7,18 @@ namespace BL
     public class Hospital
     {
         public string title { get; set; }
-        public HashSet<Department> departments { get; set; }
-        public Hospital(string title, HashSet<Department> departments) => (_title, _departments) = (title, departments);
+        public HashSet<IDepartment> departments { get; set; }
+        public Hospital(string title, HashSet<IDepartment> departments)
+        {
+            this.title = title;
+            this.departments = departments;
+        }
 
-        public void createDepartment(Department department)
+        public void createDepartment(IDepartment department)
         {
             departments.Add(department);
         }
-        public void dismantleDepartment(Department department)
+        public void dismantleDepartment(IDepartment department)
         {
             departments.Remove(department);
         }
