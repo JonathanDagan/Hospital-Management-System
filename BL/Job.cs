@@ -29,9 +29,7 @@ namespace BL
                 rate *= ( 1 + riskFactor );
             }
 
-            rate += _CalcRanksRateFactor();
-            
-            return rate;
+            return rate += _CalcRanksRateFactor();
         }
 
         private double _CalcRanksRateFactor()
