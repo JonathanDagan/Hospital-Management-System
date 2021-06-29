@@ -2,7 +2,7 @@
 # HMS
 ### Hospital Managment System
 
-## [Submition Page](docs/SUBMITION.md)
+## [Submission Page](docs/SUBMISSION.md)
 
 ### Design:
 
