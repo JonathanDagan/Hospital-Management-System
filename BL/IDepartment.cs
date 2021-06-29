@@ -8,7 +8,11 @@ namespace BL
     {
         public string title { get; set; }
         public HashSet<IEmployee> staff { get; set; }
-        public IDepartment(string title, HashSet<IEmployee> staff) => (_title, _staff) = (title, staff);
+        // public IDepartment(string title, HashSet<IEmployee> staff)
+        // {
+        //     this.title = title;
+        //     this.staff = staff;
+        // }
 
         public void hireEmployee(IEmployee employee)
         {
